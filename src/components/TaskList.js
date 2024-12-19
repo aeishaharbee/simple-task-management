@@ -22,6 +22,14 @@ export default function TaskList({ tasks, onEditTask, onDeleteTask }) {
     return groups;
   }, {});
 
+  if (tasks.length === 0) {
+    return (
+      <p className="text-center">
+        No tasks yet. Add a new task to get started!
+      </p>
+    );
+  }
+
   return (
     <div>
       {Object.keys(groupedTasks).map((priority) => (
